@@ -23,12 +23,15 @@ Route::group(array('before' => 'auth'), function()
 });
 
 #status
-Route::post('/api/auth', function()
+Route::post('/api/register', function()
 {
 	$email = Input::get("email", "");
 	$pass = Input::get("pass", "");
-    if(user::insert($user,$pass) != 0)
+	$data = user::insert($email,$pass);
+
+    if($data != 0)
     {
+    	permissionUser::insert($data,1,0);
     	return ["status"=>200];
 	}
     return ["status"=>403];

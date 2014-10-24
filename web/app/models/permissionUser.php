@@ -4,7 +4,7 @@ class permissionUser extends \Eloquent {
     
     public static function remove($id)
     {
-  	    $obj = permission_user :: find($id);
+  	    $obj = permissionUser :: find($id);
   	    if(count($obj) > 0)
   	    {
 		    return $obj -> delete();
@@ -13,17 +13,17 @@ class permissionUser extends \Eloquent {
 
     public static function getOne($id)
     {
-  	    return permission_user::find($id);
+  	    return permissionUser::find($id);
     }
   
     public static function getList()
     {
-  	    return permission_user::get();
+  	    return permissionUser::get();
     }
 
     public static function updateuser_id($id , $user_id)
     {
-  	     $obj = permission_user::getOne($id);
+  	     $obj = permissionUser::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> user_id = $user_id;
@@ -33,7 +33,7 @@ class permissionUser extends \Eloquent {
    
     public static function updatepermission_id($id , $permission_id)
     {
-  	     $obj = permission_user::getOne($id);
+  	     $obj = permissionUser::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> permission_id = $permission_id;
@@ -43,7 +43,7 @@ class permissionUser extends \Eloquent {
    
     public static function updateitem_id($id , $item_id)
     {
-  	     $obj = permission_user::getOne($id);
+  	     $obj = permissionUser::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> item_id = $item_id;
@@ -53,7 +53,7 @@ class permissionUser extends \Eloquent {
      
     public static function insert($user_id, $permission_id, $item_id)
     {
-        $obj = new permission_user();
+        $obj = new permissionUser();
         $obj -> user_id = $user_id;
         $obj -> permission_id = $permission_id;
         $obj -> item_id = $item_id;
