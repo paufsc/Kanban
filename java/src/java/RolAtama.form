@@ -23,75 +23,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="verilecekGlabal" min="-2" max="-2" attributes="0"/>
-                  <Component id="kisilabel" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="vgTextfield" max="32767" attributes="0"/>
-                  <Component id="kisicombox" pref="157" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="gorevverBtn" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="vgTextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="verilecekGlabal" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="kisilabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="kisicombox" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="gorevverBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="229" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
-  <SubComponents>
-    <Component class="javax.swing.JLabel" name="kisilabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ki&#x15f;i :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="verilecekGlabal">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Verilecek G&#xf6;rev :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="vgTextfield">
-    </Component>
-    <Component class="javax.swing.JButton" name="gorevverBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="G&#xf6;rev Ver"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="kisicombox">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-  </SubComponents>
 </Form>
