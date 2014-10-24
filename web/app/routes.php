@@ -13,6 +13,7 @@
 
 Route::group(array('before' => 'auth'), function()
 {
+	
     Route::get('/api/protected', function()
     {
         return "protected";
