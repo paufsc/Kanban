@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', function()
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('hello');
+    Route::get('/api/protected', function()
+    {
+        return "protected";
+    });
+
+    
 });
+ Route::get('/', function()
+    {
+        return View::make("hello");
+    });
