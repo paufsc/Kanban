@@ -32,6 +32,7 @@ Route::post('/api/register', function()
     if($data != 0)
     {
     	permissionUser::insert($data,1,0);
+    	permissionUser::insert($data,3,0);
     	return ["status"=>200];
 	}
     return ["status"=>403];
