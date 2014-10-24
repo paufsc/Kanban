@@ -1,10 +1,10 @@
 <?php
 class user extends \Eloquent {
     public $table = "user";
-    public static login($email,$pass)
+    public static function login($email,$pass)
     {
       return user::where("email","=",$email)
-      ->where("pass","=",$pass)->get();
+      ->where("password","=",$pass)->get();
     }
     
     public static function remove($id)

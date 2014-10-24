@@ -39,7 +39,6 @@ Route::filter('auth', function()
 	{
 		return Redirect::to("/");
 	}
-	var_dump();
 
 });
 

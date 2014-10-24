@@ -1,5 +1,5 @@
 <?php
-class permission_user extends \Eloquent {
+class permissionUser extends \Eloquent {
     public $table = "permission_user";
     
     public static function remove($id)

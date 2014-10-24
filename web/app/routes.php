@@ -22,13 +22,25 @@ Route::group(array('before' => 'auth'), function()
 
 });
 
+#status
+Route::post('/api/auth', function()
+{
+	$email = Input::get("email", "");
+	$pass = Input::get("pass", "");
+    if(user::insert($user,$pass) != 0)
+    {
+    	return ["status"=>200];
+	}
+    return ["status"=>403];
+});
+
 
 #status
 Route::get('/api/auth', function()
 {
     if(Session::get("id") != null)
     {
-    	return ["id"=>Session::get("id","perms"=>Session::get("perms"))];
+    	return ["id"=>Session::get("id"),"perms"=>Session::get("perms")];
     }
 });
 #login
@@ -41,7 +53,7 @@ Route::post('/api/auth', function()
 	{
 
 		Session::push("id", $data[0]->id);
-		Session::push("perms",permission_user::where("user_id","=",$data[0]->id)->get());
+		Session::push("perms",permissionUser::where("user_id","=",$data[0]->id)->get());
         return ["status"=>200];
 	}
     return ["status"=>403];
