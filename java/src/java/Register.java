@@ -38,7 +38,7 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        emaillabel.setText("Email :");
+        emaillabel.setText("E-mail :");
 
         sifrelabel.setText("Şifre :");
 
