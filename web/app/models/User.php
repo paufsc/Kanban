@@ -1,26 +1,58 @@
 <?php
+class user extends \Eloquent {
+    public $table = "user";
+    public static function login($email,$pass)
+    {
+      return user::where("email","=",$email)
+      ->where("password","=",$pass)->get();
+    }
+    
+    public static function remove($id)
+    {
+  	    $obj = user :: find($id);
+  	    if(count($obj) > 0)
+  	    {
+		    return $obj -> delete();
+  	    }
+    }
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
+    public static function getOne($id)
+    {
+  	    return user::find($id);
+    }
+  
+    public static function getList()
+    {
+  	    return user::get();
+    }
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
-
-	use UserTrait, RemindableTrait;
-
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password', 'remember_token');
+    public static function updateemail($id , $email)
+    {
+  	     $obj = user::getOne($id);
+  	     if(count($obj) > 0)
+  	     {
+   		     $obj -> email = $email;
+  		     $obj -> save();
+  	     }
+    }
+   
+    public static function updatepassword($id , $password)
+    {
+  	     $obj = user::getOne($id);
+  	     if(count($obj) > 0)
+  	     {
+   		     $obj -> password = $password;
+  		     $obj -> save();
+  	     }
+    }
+     
+    public static function insert($email, $password)
+    {
+        $obj = new user();
+        $obj -> email = $email;
+        $obj -> password = $password;
+        $obj -> save();
+        return $obj -> id;
+    }
 
 }
