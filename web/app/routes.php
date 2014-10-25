@@ -31,8 +31,11 @@ Route::post('/api/register', function()
 
     if($data != 0)
     {
-    	permissionUser::insert($data,1,0);
-    	permissionUser::insert($data,3,0);
+        $perms = rolePermission::where("role_id","=",1)->get();
+        foreach($perms as $perm)
+        {
+            permissionUser::insert($data,$perm->permission_id);
+        }
     	return ["status"=>200];
 	}
     return ["status"=>403];
