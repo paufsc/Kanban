@@ -1,10 +1,10 @@
 <?php
-class role_permission extends \Eloquent {
-    public $table = "role_permission";
+class rolePermission extends \Eloquent {
+    public $table = "rolePermission";
     
     public static function remove($id)
     {
-  	    $obj = role_permission :: find($id);
+  	    $obj = rolePermission :: find($id);
   	    if(count($obj) > 0)
   	    {
 		    return $obj -> delete();
@@ -13,17 +13,17 @@ class role_permission extends \Eloquent {
 
     public static function getOne($id)
     {
-  	    return role_permission::find($id);
+  	    return rolePermission::find($id);
     }
   
     public static function getList()
     {
-  	    return role_permission::get();
+  	    return rolePermission::get();
     }
 
     public static function updatepermission_id($id , $permission_id)
     {
-  	     $obj = role_permission::getOne($id);
+  	     $obj = rolePermission::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> permission_id = $permission_id;
@@ -33,7 +33,7 @@ class role_permission extends \Eloquent {
    
     public static function updaterole_id($id , $role_id)
     {
-  	     $obj = role_permission::getOne($id);
+  	     $obj = rolePermission::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> role_id = $role_id;
@@ -43,7 +43,7 @@ class role_permission extends \Eloquent {
      
     public static function insert($permission_id, $role_id)
     {
-        $obj = new role_permission();
+        $obj = new rolePermission();
         $obj -> permission_id = $permission_id;
         $obj -> role_id = $role_id;
         $obj -> save();

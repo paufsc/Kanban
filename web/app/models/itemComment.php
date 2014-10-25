@@ -1,10 +1,10 @@
 <?php
-class item_comment extends \Eloquent {
-    public $table = "item_comment";
+class itemComment extends \Eloquent {
+    public $table = "itemComment";
     
     public static function remove($id)
     {
-  	    $obj = item_comment :: find($id);
+  	    $obj = itemComment :: find($id);
   	    if(count($obj) > 0)
   	    {
 		    return $obj -> delete();
@@ -13,17 +13,17 @@ class item_comment extends \Eloquent {
 
     public static function getOne($id)
     {
-  	    return item_comment::find($id);
+  	    return itemComment::find($id);
     }
   
     public static function getList()
     {
-  	    return item_comment::get();
+  	    return itemComment::get();
     }
 
     public static function updateitem_id($id , $item_id)
     {
-  	     $obj = item_comment::getOne($id);
+  	     $obj = itemComment::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> item_id = $item_id;
@@ -33,7 +33,7 @@ class item_comment extends \Eloquent {
    
     public static function updateuser_id($id , $user_id)
     {
-  	     $obj = item_comment::getOne($id);
+  	     $obj = itemComment::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> user_id = $user_id;
@@ -43,7 +43,7 @@ class item_comment extends \Eloquent {
    
     public static function updatecomment($id , $comment)
     {
-  	     $obj = item_comment::getOne($id);
+  	     $obj = itemComment::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> comment = $comment;
@@ -53,7 +53,7 @@ class item_comment extends \Eloquent {
      
     public static function insert($item_id, $user_id, $comment)
     {
-        $obj = new item_comment();
+        $obj = new itemComment();
         $obj -> item_id = $item_id;
         $obj -> user_id = $user_id;
         $obj -> comment = $comment;

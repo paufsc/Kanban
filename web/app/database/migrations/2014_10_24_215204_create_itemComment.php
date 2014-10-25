@@ -12,7 +12,7 @@ class CreateItemComment extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('item_comment', function(Blueprint $table)
+		Schema::create('itemComment', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('item_id');
@@ -30,7 +30,7 @@ class CreateItemComment extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('item_comment');
+		Schema::drop('itemComment');
 	}
 
 }
