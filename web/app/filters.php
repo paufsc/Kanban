@@ -37,7 +37,7 @@ Route::filter('auth', function()
 {
 	if(Session::get("id") == null)
 	{
-		return Redirect::to("/");
+		return [ "status" => "403"];
 	}
 
 });
