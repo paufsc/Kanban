@@ -38,14 +38,14 @@
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="emailTf" pref="170" max="32767" attributes="0"/>
-                  <Component id="sifreTf" max="32767" attributes="0"/>
+                  <Component id="tfEmail" pref="170" max="32767" attributes="0"/>
+                  <Component id="tfPassword" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="girisbtn" min="-2" pref="88" max="-2" attributes="0"/>
+              <Component id="btn" min="-2" pref="88" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -56,25 +56,28 @@
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="emaillabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailTf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="sifrelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sifreTf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="girisbtn" min="-2" max="-2" attributes="0"/>
+              <Component id="btn" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="girisbtn">
+    <Component class="javax.swing.JButton" name="btn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Giri&#x15f;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="emaillabel">
       <Properties>
@@ -86,9 +89,9 @@
         <Property name="text" type="java.lang.String" value="&#x15e;ifre :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="emailTf">
+    <Component class="javax.swing.JTextField" name="tfEmail">
     </Component>
-    <Component class="javax.swing.JTextField" name="sifreTf">
+    <Component class="javax.swing.JTextField" name="tfPassword">
     </Component>
   </SubComponents>
 </Form>
