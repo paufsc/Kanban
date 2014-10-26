@@ -29,17 +29,22 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         sunuttumbtn = new javax.swing.JButton();
-        girisbtn = new javax.swing.JButton();
+        btn = new javax.swing.JButton();
         emaillabel = new javax.swing.JLabel();
         sifrelabel = new javax.swing.JLabel();
-        emailTf = new javax.swing.JTextField();
-        sifreTf = new javax.swing.JTextField();
+        tfEmail = new javax.swing.JTextField();
+        tfPassword = new javax.swing.JTextField();
 
         sunuttumbtn.setText("Şifremi Unuttum");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        girisbtn.setText("Giriş");
+        btn.setText("Giriş");
+        btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActionPerformed(evt);
+            }
+        });
 
         emaillabel.setText("Email :");
 
@@ -56,12 +61,12 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(emaillabel))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(emailTf, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(sifreTf))
+                    .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(tfPassword))
                 .addGap(0, 45, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(girisbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(113, 113, 113))
         );
         layout.setVerticalGroup(
@@ -70,18 +75,28 @@ public class Login extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emaillabel)
-                    .addComponent(emailTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sifrelabel)
-                    .addComponent(sifreTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(girisbtn)
+                .addComponent(btn)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
+        // TODO add your handling code here:
+        String Email;
+        String Password;
+        Email=tfEmail.getText();
+        Password=tfPassword.getText();
+ 
+        
+    }//GEN-LAST:event_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,11 +119,11 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField emailTf;
+    private javax.swing.JButton btn;
     private javax.swing.JLabel emaillabel;
-    private javax.swing.JButton girisbtn;
-    private javax.swing.JTextField sifreTf;
     private javax.swing.JLabel sifrelabel;
     private javax.swing.JButton sunuttumbtn;
+    private javax.swing.JTextField tfEmail;
+    private javax.swing.JTextField tfPassword;
     // End of variables declaration//GEN-END:variables
 }
