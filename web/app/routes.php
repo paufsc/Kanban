@@ -19,6 +19,10 @@ Route::group(array('before' => 'auth'), function()
         Session::clear();
         return ["status"=>200];
     });
+    Route::get("/api/list",function()
+    {
+       return ["status"=>200,"data"=>modelList::getList()];
+    });
 
 });
 
@@ -47,15 +51,17 @@ Route::get('/api/auth', function()
 {
     if(Session::get("id") != null)
     {
-    	return ["id"=>Session::get("id"),"perms"=>Session::get("perms")];
+    	return ["state"=>200, "id"=>Session::get("id"),"perms"=>Session::get("perms")];
     }
+    return ["state"=>"403"];
+
 });
 #login
 Route::post('/api/auth', function()
 {
 	$email = Input::get("email", "");
 	$pass = Input::get("pass", "");
-	$data = User::login($email,$pass);
+	$data = user::login($email,$pass);
 	if(count($data) > 0)
 	{
 

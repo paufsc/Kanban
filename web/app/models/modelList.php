@@ -1,10 +1,10 @@
 <?php
-class list extends \Eloquent {
+class modelList extends \Eloquent {
     public $table = "list";
     
     public static function remove($id)
     {
-  	    $obj = list :: find($id);
+  	    $obj = modelList :: find($id);
   	    if(count($obj) > 0)
   	    {
 		    return $obj -> delete();
@@ -13,17 +13,17 @@ class list extends \Eloquent {
 
     public static function getOne($id)
     {
-  	    return list::find($id);
+  	    return modelList::find($id);
     }
   
     public static function getList()
     {
-  	    return list::get();
+  	    return modelList::get();
     }
 
     public static function updatename($id , $name)
     {
-  	     $obj = list::getOne($id);
+  	     $obj = modelList::getOne($id);
   	     if(count($obj) > 0)
   	     {
    		     $obj -> name = $name;
@@ -33,7 +33,7 @@ class list extends \Eloquent {
      
     public static function insert($name)
     {
-        $obj = new list();
+        $obj = new modelList();
         $obj -> name = $name;
         $obj -> save();
         return $obj -> id;
