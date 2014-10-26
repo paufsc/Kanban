@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder {
         permission::insert("görev durum değiştirme");
         permission::insert("kişilere görev atama");
         permission::insert("görev reddetme");
-
+        
         rolePermission::insert(1,1);
         rolePermission::insert(3,1);
         rolePermission::insert(5,1);

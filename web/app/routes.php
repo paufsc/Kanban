@@ -24,6 +24,7 @@ Route::group(array('before' => 'auth'), function()
         Session::clear();
         return ["state"=>200];
     });
+    
     Route::get("/api/list",function()
     {
        return ["state"=>200,"data"=>modelList::getList()];
@@ -38,7 +39,7 @@ Route::post('/api/register', function()
 	$email = Input::get("email", "");
 	$pass = Input::get("pass", "");
 	$data = user::insert($email,$pass);
-
+    
     if($data != 0)
     {
         $perms = rolePermission::where("role_id","=",1)->get();

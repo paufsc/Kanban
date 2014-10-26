@@ -35,11 +35,10 @@ App::after(function($request, $response)
 
 Route::filter('isAdmin', function()
 {
-    var_dump(Session::all());
-    if(Session::get("id") == null)
-    {
-    //    return [ "status" => "403"];
-    }
+    //var_dump(Session::all());
+    $id = Session::get("id");
+    $perms = permissionUser::where("user_id","=",$id[0])->get();
+    var_dump($perms);
 
 });
 Route::filter('auth', function()
