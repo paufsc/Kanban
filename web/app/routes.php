@@ -15,7 +15,7 @@ Route::group(array('before' => 'auth'), function()
 {
     Route::group(array('before' => 'isAdmin'), function() {
         Route::get("/api/test", function () {
-
+                return userItem::getList();
         });
     });
     #logout
@@ -71,7 +71,7 @@ Route::post('/api/auth', function()
 	if(count($data) > 0)
 	{
 
-		Session::push("id", $data[0]->id);
+		Session::set("id", $data[0]->id);
 
 		Session::push("perms",permissionUser::where("user_id","=",$data[0]->id)->get());
         return ["state"=>200];
