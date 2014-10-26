@@ -17,15 +17,15 @@ class DatabaseSeeder extends Seeder {
         permission::insert("görev durum değiştirme");
         permission::insert("kişilere görev atama");
         permission::insert("görev reddetme");
-        rolePermission::insert(1,1);
-        rolePermission::insert(1,3);
-        rolePermission::insert(1,5);
-        rolePermission::insert(2,1);
-        rolePermission::insert(2,2);
-        rolePermission::insert(2,3);
-        rolePermission::insert(2,4);
-        rolePermission::insert(2,5);
 
+        rolePermission::insert(1,1);
+        rolePermission::insert(3,1);
+        rolePermission::insert(5,1);
+        rolePermission::insert(1,2);
+        rolePermission::insert(2,2);
+        rolePermission::insert(3,2);
+        rolePermission::insert(4,2);
+        rolePermission::insert(5,2);
 
 
         //User::create(array('email' => 'foo@bar.com'));
