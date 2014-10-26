@@ -61,7 +61,7 @@ Route::post('/api/auth', function()
 {
 	$email = Input::get("email", "");
 	$pass = Input::get("pass", "");
-	$data = User::login($email,$pass);
+	$data = user::login($email,$pass);
 	if(count($data) > 0)
 	{
 
