@@ -1,5 +1,5 @@
 <?php
-class list extends \Eloquent {
+class modelList extends \Eloquent {
     public $table = "list";
     
     public static function remove($id)

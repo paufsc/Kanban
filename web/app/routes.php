@@ -19,6 +19,10 @@ Route::group(array('before' => 'auth'), function()
         Session::clear();
         return ["status"=>200];
     });
+    Route::get("/api/list",function()
+    {
+       return \modelList::find();
+    });
 
 });
 
