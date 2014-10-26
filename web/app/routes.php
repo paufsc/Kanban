@@ -49,7 +49,7 @@ Route::get('/api/auth', function()
     {
     	return ["state"=>200, "id"=>Session::get("id"),"perms"=>Session::get("perms")];
     }
-    return ["state"=>403];
+    return ["state"=>"403"];
 
 });
 #login
