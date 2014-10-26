@@ -29,7 +29,14 @@ Route::group(array('before' => 'auth'), function()
     {
        return ["state"=>200,"data"=>modelList::getList()];
     });
-
+    Route::get("/api/list/my",function()
+    {
+       $user_id = Session::get("id");
+       if (is_array($user_id)) {
+            $user_id = $user_id[0];
+       } 
+       return ["status"=>200,"list"=> userItem::getUserList($user_id ) ];
+    });
 
 });
 
