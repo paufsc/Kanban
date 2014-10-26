@@ -21,7 +21,7 @@ Route::group(array('before' => 'auth'), function()
     });
     Route::get("/api/list",function()
     {
-       return \modelList::find();
+       return ["status"=>200,"data"=>modelList::getList()];
     });
 
 });
