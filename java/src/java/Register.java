@@ -6,6 +6,8 @@
 
 package java;
 
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+
 /**
  *
  * @author lynxar
@@ -31,10 +33,10 @@ public class Register extends javax.swing.JFrame {
         emaillabel = new javax.swing.JLabel();
         sifrelabel = new javax.swing.JLabel();
         sifteTeklabel = new javax.swing.JLabel();
-        emailTf = new javax.swing.JTextField();
-        sifreTf = new javax.swing.JTextField();
-        sifreTtf = new javax.swing.JTextField();
-        KayıtBtn = new javax.swing.JButton();
+        tfEmail = new javax.swing.JTextField();
+        tfPassword = new javax.swing.JTextField();
+        tfTryPassword = new javax.swing.JTextField();
+        btRegistry = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,7 +46,18 @@ public class Register extends javax.swing.JFrame {
 
         sifteTeklabel.setText("Şifre Tekrarı :");
 
-        KayıtBtn.setText("Kayıt");
+        tfEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfEmailActionPerformed(evt);
+            }
+        });
+
+        btRegistry.setText("Kayıt");
+        btRegistry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRegistryActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,12 +72,13 @@ public class Register extends javax.swing.JFrame {
                         .addComponent(emaillabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emailTf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sifreTf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sifreTtf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(KayıtBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tfPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfTryPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btRegistry, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(20, 20, 20)))
+                    .addComponent(tfEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -73,22 +87,54 @@ public class Register extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emaillabel)
-                    .addComponent(emailTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sifrelabel)
-                    .addComponent(sifreTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sifteTeklabel)
-                    .addComponent(sifreTtf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfTryPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(KayıtBtn)
+                .addComponent(btRegistry)
                 .addGap(32, 32, 32))
         );
 
+        tfPassword.getAccessibleContext().setAccessibleName("");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btRegistryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegistryActionPerformed
+        // TODO add your handling code here:
+        try {
+          String lineIwant = tfEmail.getText().toString();
+                String emailreg = "[A-Z a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+(?:[A-Z]{2}|com|org|net|edu|tr|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\b";
+                Boolean emailCheck = lineIwant.matches(emailreg);
+
+                if (emailCheck == false) {//email check
+                    
+                }else if (tfPassword.getText().toString()!=tfTryPassword.getText().toString())//password check
+                {
+
+                }else{//registry
+                
+                }
+
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        
+    }//GEN-LAST:event_btRegistryActionPerformed
+
+    private void tfEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,12 +172,12 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton KayıtBtn;
-    private javax.swing.JTextField emailTf;
+    private javax.swing.JButton btRegistry;
     private javax.swing.JLabel emaillabel;
-    private javax.swing.JTextField sifreTf;
-    private javax.swing.JTextField sifreTtf;
     private javax.swing.JLabel sifrelabel;
     private javax.swing.JLabel sifteTeklabel;
+    private javax.swing.JTextField tfEmail;
+    private javax.swing.JTextField tfPassword;
+    private javax.swing.JTextField tfTryPassword;
     // End of variables declaration//GEN-END:variables
 }
