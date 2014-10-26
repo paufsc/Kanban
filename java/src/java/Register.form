@@ -34,13 +34,15 @@
               </Group>
               <EmptySpace pref="51" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="emailTf" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                  <Component id="sifreTf" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                  <Component id="sifreTtf" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="KayıtBtn" min="-2" pref="86" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="tfPassword" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                      <Component id="tfTryPassword" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btRegistry" min="-2" pref="86" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
+                  <Component id="tfEmail" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -52,20 +54,20 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="emaillabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailTf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="sifrelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sifreTf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="sifteTeklabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sifreTtf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfTryPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="46" max="32767" attributes="0"/>
-              <Component id="KayıtBtn" min="-2" max="-2" attributes="0"/>
+              <Component id="btRegistry" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -87,16 +89,25 @@
         <Property name="text" type="java.lang.String" value="&#x15e;ifre Tekrar&#x131; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="emailTf">
+    <Component class="javax.swing.JTextField" name="tfEmail">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfEmailActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="sifreTf">
+    <Component class="javax.swing.JTextField" name="tfPassword">
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+      </AccessibilityProperties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sifreTtf">
+    <Component class="javax.swing.JTextField" name="tfTryPassword">
     </Component>
-    <Component class="javax.swing.JButton" name="Kay&#x131;tBtn">
+    <Component class="javax.swing.JButton" name="btRegistry">
       <Properties>
         <Property name="text" type="java.lang.String" value="Kay&#x131;t"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btRegistryActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
