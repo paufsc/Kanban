@@ -47,8 +47,10 @@ Route::get('/api/auth', function()
 {
     if(Session::get("id") != null)
     {
-    	return ["id"=>Session::get("id"),"perms"=>Session::get("perms")];
+    	return ["state"=>200, "id"=>Session::get("id"),"perms"=>Session::get("perms")];
     }
+    return ["state"=>403];
+
 });
 #login
 Route::post('/api/auth', function()
