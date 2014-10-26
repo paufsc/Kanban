@@ -13,20 +13,26 @@
 
 Route::group(array('before' => 'auth'), function()
 {
+    Route::group(array('before' => 'isAdmin'), function() {
+        Route::get("/api/test", function () {
+
+        });
+    });
     #logout
     Route::delete('/api/auth', function()
     {
         Session::clear();
-        return ["status"=>200];
+        return ["state"=>200];
     });
     Route::get("/api/list",function()
     {
-       return ["status"=>200,"data"=>modelList::getList()];
+       return ["state"=>200,"data"=>modelList::getList()];
     });
+
 
 });
 
-#status
+#register
 Route::post('/api/register', function()
 {
 	$email = Input::get("email", "");
@@ -40,13 +46,13 @@ Route::post('/api/register', function()
         {
             permissionUser::insert($data,$perm->permission_id);
         }
-    	return ["status"=>200];
+    	return ["state"=>200];
 	}
-    return ["status"=>403];
+    return ["state"=>403];
 });
 
 
-#status
+#state
 Route::get('/api/auth', function()
 {
     if(Session::get("id") != null)
@@ -66,10 +72,11 @@ Route::post('/api/auth', function()
 	{
 
 		Session::push("id", $data[0]->id);
+
 		Session::push("perms",permissionUser::where("user_id","=",$data[0]->id)->get());
-        return ["status"=>200];
+        return ["state"=>200];
 	}
-    return ["status"=>403];
+    return ["state"=>403];
 
 });
 Route::get('/', function()

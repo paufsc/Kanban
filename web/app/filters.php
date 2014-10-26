@@ -33,6 +33,15 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('isAdmin', function()
+{
+    var_dump(Session::all());
+    if(Session::get("id") == null)
+    {
+    //    return [ "status" => "403"];
+    }
+
+});
 Route::filter('auth', function()
 {
 	if(Session::get("id") == null)
