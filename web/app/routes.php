@@ -35,7 +35,7 @@ Route::group(array('before' => 'auth'), function()
        if (is_array($user_id)) {
             $user_id = $user_id[0];
        } 
-       return ["status"=>200,"list"=> userItem::getUserList($user_id ) ];
+       return ["state"=>200,"list"=> userItem::getUserList($user_id ) ];
     });
 
 });
