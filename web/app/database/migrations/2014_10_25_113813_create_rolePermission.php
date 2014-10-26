@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateItemComment extends Migration {
+class CreateRolePermission extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,11 @@ class CreateItemComment extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('item_comment', function(Blueprint $table)
+		Schema::create('rolePermission', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('item_id');
-			$table->integer('user_id');
-			$table->text('comment');
+			$table->integer('permission_id');
+			$table->integer('role_id');
 			$table->timestamps();
 		});
 	}
@@ -30,7 +29,7 @@ class CreateItemComment extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('item_comment');
+		Schema::drop('rolePermission');
 	}
 
 }

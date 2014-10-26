@@ -1,6 +1,6 @@
 <?php
 class permissionUser extends \Eloquent {
-    public $table = "permission_user";
+    public $table = "permissionUser";
     
     public static function remove($id)
     {
@@ -40,23 +40,12 @@ class permissionUser extends \Eloquent {
   		     $obj -> save();
   	     }
     }
-   
-    public static function updateitem_id($id , $item_id)
-    {
-  	     $obj = permissionUser::getOne($id);
-  	     if(count($obj) > 0)
-  	     {
-   		     $obj -> item_id = $item_id;
-  		     $obj -> save();
-  	     }
-    }
      
-    public static function insert($user_id, $permission_id, $item_id)
+    public static function insert($user_id, $permission_id)
     {
         $obj = new permissionUser();
         $obj -> user_id = $user_id;
         $obj -> permission_id = $permission_id;
-        $obj -> item_id = $item_id;
         $obj -> save();
         return $obj -> id;
     }

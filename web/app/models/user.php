@@ -1,11 +1,6 @@
 <?php
 class user extends \Eloquent {
     public $table = "user";
-    public static function login($email,$pass)
-    {
-      return user::where("email","=",$email)
-      ->where("password","=",$pass)->get();
-    }
     
     public static function remove($id)
     {
