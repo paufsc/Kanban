@@ -30,11 +30,22 @@ class item extends \Eloquent {
   		     $obj -> save();
   	     }
     }
+   
+    public static function updatemodelList_id($id , $modelList_id)
+    {
+  	     $obj = item::getOne($id);
+  	     if(count($obj) > 0)
+  	     {
+   		     $obj -> modelList_id = $modelList_id;
+  		     $obj -> save();
+  	     }
+    }
      
-    public static function insert($name)
+    public static function insert($name, $modelList_id)
     {
         $obj = new item();
         $obj -> name = $name;
+        $obj -> modelList_id = $modelList_id;
         $obj -> save();
         return $obj -> id;
     }
