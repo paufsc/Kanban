@@ -6,3 +6,4 @@
 .env.php
 .DS_Store
 Thumbs.db
+/java/nbproject/private/
