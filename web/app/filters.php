@@ -33,19 +33,28 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('isAdmin', function()
+{
+    //var_dump(Session::all());
+    $id = Session::get("id");
+    $perms = permissionUser::where("user_id","=",$id)->get();
+    $data = [];
+    foreach($perms as $perm)
+    {
+        array_push($data,$perm->permission_id);
+    }
+    if(!in_array(4,$data) && !in_array(2,$data) )
+    {
+        return ["state"=> 403];
+    }
+});
 Route::filter('auth', function()
 {
-	if (Auth::guest())
+	if(Session::get("id") == null)
 	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
-			return Redirect::guest('login');
-		}
+		return [ "state" => "403"];
 	}
+
 });
 
 
