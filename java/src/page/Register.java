@@ -119,7 +119,7 @@ public class Register extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Email hatali!!");
                 }else if (!tfPassword.getText().toString().equals(tfTryPassword.getText().toString()))//password check
                 {
-                    JOptionPane.showMessageDialog(this, "Şifreler aynı degil!!");
+                    JOptionPane.showMessageDialog(this, "Şifreler aynı degil!!!");
                 }else{//registry
                     JOptionPane.showMessageDialog(this, "Baglantı yapıldı!!");
                 }
