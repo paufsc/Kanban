@@ -21,13 +21,16 @@ class userItem extends \Eloquent {
   	    return userItem::get();
     }
 
-    public static function getUserList($user_id)
+    public static function getUserList($user_id = null)
     {
-       return userItem::join('item', 'item.id', '=', 'userItem.item_id')
+       $data =  userItem::join('item', 'item.id', '=', 'userItem.item_id')
                         ->join('modelList', 'modelList.id', '=', 'item.modelList_id') 
-                        ->select('modelList.*')
-                        ->where( 'userItem.user_id',$user_id)
-                        ->get(); 
+                        ->select('modelList.*');
+        if($user_id == null)
+        {
+            return $data -> get();
+        }
+        return $data ->where('userItem.user_id',$user_id) ->get();
     }
 
     public static function updateuser_id($id , $user_id)

@@ -14,8 +14,8 @@
 Route::group(array('before' => 'auth'), function()
 {
     Route::group(array('before' => 'isAdmin'), function() {
-        Route::get("/api/test", function () {
-                return userItem::getList();
+        Route::get("/api/list/all", function () {
+            return ["state"=>200,"list"=> userItem::getUserList()];
         });
     });
     #logout
