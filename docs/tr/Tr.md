@@ -12,7 +12,7 @@ TODO
 ---------------------------
 <h3>Web Gui</h3>
  
-<hr>
+<hr align="center">
 <img src="https://github.com/paufsc/Kanban/blob/master/img/1.png" height="412" width="300">&nbsp;<br>
 <img src="https://github.com/paufsc/Kanban/blob/master/img/2.png" height="412" width="300">&nbsp;<br>
 <img src="https://github.com/paufsc/Kanban/blob/master/img/3.png" height="412" width="300"><br>
