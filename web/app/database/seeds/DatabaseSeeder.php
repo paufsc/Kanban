@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder {
         
         rolePermission::insert(1,1);
         rolePermission::insert(3,1);
-        rolePermission::insert(5,1);
+        rolePermission::isasnsert(5,1);
         rolePermission::insert(1,2);
         rolePermission::insert(2,2);
         rolePermission::insert(3,2);
