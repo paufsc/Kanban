@@ -1,6 +1,6 @@
 <?php
 class modelList extends \Eloquent {
-    public $table = "list";
+    public $table = "modelList";
     
     public static function remove($id)
     {
