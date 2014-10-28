@@ -24,8 +24,8 @@ class userItem extends \Eloquent {
     public static function getUserList($user_id = null)
     {
        $data =  userItem::join('item', 'item.id', '=', 'userItem.item_id')
-                        ->join('modelList', 'modelList.id', '=', 'item.modelList_id') 
-                        ->select('modelList.*');
+                        ->join('modelList', 'modelList.id', '=', 'item.modelList_id')
+                        ->select('item.*');
         if($user_id == null)
         {
             return $data -> get();
