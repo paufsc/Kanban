@@ -14,7 +14,7 @@
 Route::group(array('before' => 'auth'), function() {
     Route::group(array('before' => 'isAdmin'), function() {
         Route::get("/api/list/all", function () {
-            return ["state"=>200,"list"=> userItem::getUserList()];
+            return ["state"=>200,"list"=> item::getList()];
         });
         Route::get("/api/user/all", function () {
             return ["state"=>200,"list"=> user::select(["id","email"])->get()];
@@ -26,8 +26,8 @@ Route::group(array('before' => 'auth'), function() {
                 return ["state"=>403];
         });
         Route::post("/api/job/assign", function () {
-            $userid = Input::get("user_id","");
-            $itemid = Input::get("item_id","");
+            $userid = Input::get("user_id",0);
+            $itemid = Input::get("item_id",0);
             if( userItem::insert($userid,$itemid) != 0)
                 return ["state"=>200];
             return ["state"=>403];
@@ -45,12 +45,10 @@ Route::group(array('before' => 'auth'), function() {
     });
     Route::post('/api/item/drop',function ()
     {
-
         $list_id = Input::get("list_id",0);
         $item_id = Input::get("item_id",0);
         item::updatemodelList_id($item_id,$list_id);
         return ["state"=>200];
-
     });
     #logout
     Route::delete('/api/auth', function()
