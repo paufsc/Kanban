@@ -6,6 +6,9 @@
 
 package java;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author lynxar
@@ -94,6 +97,9 @@ public class Login extends javax.swing.JFrame {
         String Password;
         Email=tfEmail.getText();
         Password=tfPassword.getText();
+        if (Email.equals(" ")|| Password.equals(" ")) {
+            
+        }
  
         
     }//GEN-LAST:event_btnActionPerformed

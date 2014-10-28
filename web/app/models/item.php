@@ -41,7 +41,7 @@ class item extends \Eloquent {
   	     }
     }
      
-    public static function insert($name, $modelList_id)
+    public static function insert($name, $modelList_id = 1)
     {
         $obj = new item();
         $obj -> name = $name;

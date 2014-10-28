@@ -24,8 +24,8 @@ class userItem extends \Eloquent {
     public static function getUserList($user_id = null)
     {
        $data =  userItem::join('item', 'item.id', '=', 'userItem.item_id')
-                        ->join('modelList', 'modelList.id', '=', 'item.modelList_id') 
-                        ->select('modelList.*');
+                        ->join('modelList', 'modelList.id', '=', 'item.modelList_id')
+                        ->select('item.*');
         if($user_id == null)
         {
             return $data -> get();
@@ -55,6 +55,12 @@ class userItem extends \Eloquent {
      
     public static function insert($user_id, $item_id)
     {
+        $data = self::where("user_id","=",$user_id)->
+        where("item_id","=",$item_id)->get();
+        if(count($data) > 0)
+        {
+            return $data[0]->id;
+        }
         $obj = new userItem();
         $obj -> user_id = $user_id;
         $obj -> item_id = $item_id;
