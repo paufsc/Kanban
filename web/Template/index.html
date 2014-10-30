@@ -1,47 +1,83 @@
 <html>
 <head>
 	<title>Login</title>
+    <meta charset="utf8">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: rgb(193, 146, 213);">
 
-	<br><br><br><br><br><br><br><br><br><br>
-
-<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
-    <br><br><br><br><br><br>
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-           
-            <a type="button" class="btn btn-success pull-right" href="register.html">Register</a>
-            <h1 class="text-center">Login</h1>
-        </div>
-        <div class="modal-body">
-            <form class="form col-md-12 center-block">
+<script>
+    $(document).ready(function() {
+        $(".mymodal").modal({keyboard:false});
+        $(".x1 , .x2").click(function(event) {
+            event.preventDefault();
+            $(".mymodal").modal('toggle');
+            $(".mymodal2").modal('toggle');
+        });
+    });
+</script>
+    <div class="modal fade mymodal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          <div class="modal-body">
+              <div class="form-group">
+                    <button class="x1 btn btn-success pull-right">Kayıt</button>
+              </div>
+           <form role="form">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Şifre</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifre">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1"></label>
+               <button class="btn btn-primary">Giriş</button>
+              </div>
+          </div>
+         
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="x2 modal fade mymodal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          <div class="modal-body">
+              <div class="form-group">
+                    <button class="btn btn-success pull-right">Giriş</button>
+              </div>
+              <form role="form">
                 <div class="form-group">
-                    <input class="form-control input-lg" placeholder="Email" type="text">
-                </div>
-                <div class="form-group">
-                    <input class="form-control input-lg" placeholder="Password" type="password">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-                </div>
-            </form>
-        </div>    
-
-      <div class="modal-footer">       
-    </div>
-    </div>
-</div>
-
-</div>
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Şifre oluştur</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifre">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Şifreyi yeniden girin</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Şifre">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1"></label>
+               <button class="btn btn-primary">Kayıt</button>
+              </div>
+          </div>
+         
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </body>
 </html>
